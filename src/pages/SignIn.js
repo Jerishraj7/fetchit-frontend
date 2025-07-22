@@ -12,7 +12,7 @@ const SignIn = () => {
     e.preventDefault();
 
     try {
-      const loginResponse = await axios.post('http://localhost:5005/api/users/login', {
+      const loginResponse = await axios.post('https://fetchit-backend-29bo.onrender.com/api/users/login', {
         email,
         password,
       });

@@ -20,7 +20,7 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      const signupRes = await axios.post('http://localhost:5005/api/users/register', formData);
+      const signupRes = await axios.post('https://fetchit-backend-29bo.onrender.com/api/users/register', formData);
 
       if (signupRes.status === 200 || signupRes.status === 201) {
         navigate('/signin');

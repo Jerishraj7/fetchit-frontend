@@ -10,21 +10,21 @@ const products = [
   {
     _id: "6879720628fa670303b9a97a",
     name: "Tesco Gift Card",
-    image: '/.tesco.png',
+    image: '.../tesco.png',
     description: "Tesco €25 Gift Card",
     price: 20
   },
   {
     _id: "687972c128fa670303b9a97c",
     name: "Aldi Gift Card",
-    image: '/..aldi.png',
+    image: '.../aldi.png',
     description: "Aldi €20 Gift Card",
     price: 15
   },
   {
     _id: "687972e428fa670303b9a97e",
     name: "Lidl Gift Card",
-    image: 'lidl.png',
+    image: '.../lidl.png',
     description: "Lidl €30 Gift Card",
     price: 25
   }

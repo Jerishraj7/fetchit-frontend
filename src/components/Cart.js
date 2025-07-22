@@ -17,7 +17,7 @@ const Cart = ({ products }) => {
           return;
         }
 
-        const response = await axios.get(`http://localhost:5005/api/cart/${user.userId}`);
+        const response = await axios.get(`https://fetchit-backend-29bo.onrender.com/api/cart/${user.userId}`);
 
         if (response.status === 200) {
           const enrichedItems = response.data.items.map((item) => {
@@ -41,7 +41,7 @@ const Cart = ({ products }) => {
 
   const handleRemove = async (productId) => {
     try {
-      await axios.delete(`http://localhost:5005/api/cart/${user.userId}`, {
+      await axios.delete(`https://fetchit-backend-29bo.onrender.com/api/cart/${user.userId}`, {
         data: { productId }
       });
 
@@ -55,7 +55,7 @@ const Cart = ({ products }) => {
 
   const handleCheckout = async () => {
     try {
-      const response = await axios.post("http://localhost:5005/api/checkout", {
+      const response = await axios.post("https://fetchit-backend-29bo.onrender.com/api/checkout", {
         userId: user.userId
       });
 

@@ -13,7 +13,7 @@ const ProductList = ({ products }) => {
     const loadCart = async () => {
       if (user?.userId) {
         try {
-          const res = await axios.get(`http://localhost:5005/api/cart/${user.userId}`);
+          const res = await axios.get(`https://fetchit-backend-29bo.onrender.com/api/cart/${user.userId}`);
           setCartItems(res.data.items);
         } catch (err) {
           console.error(" Error loading cart:", err);
@@ -33,7 +33,7 @@ const ProductList = ({ products }) => {
 
       const itemToAdd = { productId, quantity: 1 };
 
-      const cartResponse = await axios.post("http://localhost:5005/api/cart", {
+      const cartResponse = await axios.post("https://fetchit-backend-29bo.onrender.com/api/cart", {
         userId: user.userId,
         items: [itemToAdd],
       });
@@ -41,7 +41,7 @@ const ProductList = ({ products }) => {
       if (cartResponse.status === 201) {
         console.log("Item added to cart");
 
-        const updatedCart = await axios.get(`http://localhost:5005/api/cart/${user.userId}`);
+        const updatedCart = await axios.get(`https://fetchit-backend-29bo.onrender.com/api/cart/${user.userId}`);
         setCartItems(updatedCart.data.items);
         localStorage.setItem("cartItems", JSON.stringify(updatedCart.data.items));
       }
